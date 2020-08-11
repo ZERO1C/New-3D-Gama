@@ -12,7 +12,10 @@ public class arrow : MonoBehaviour
     private float time2;
     public float speed_y;
 
-   
+    public Collider collider;
+    public Rigidbody rigidbody;
+    public float force = 500;
+
     //public float lifitime;
     public float distance;
     public Vector2 pushing;
@@ -29,63 +32,51 @@ public class arrow : MonoBehaviour
 
     void Start()
     {
-        start_distans_x = gameObject.transform.position.x;
-        start_distans_z = gameObject.transform.position.z;
-    }
+       // start_distans_x = gameObject.transform.position.x;
+       // start_distans_z = gameObject.transform.position.z;
 
+        rigidbody.AddForce(transform.TransformDirection(Vector3.forward) * force, ForceMode.Force);
+
+        Destroy(gameObject, time);
+    }
 
     private void FixedUpdate()
     {
-        finih_distans_x = gameObject.transform.position.x;
-        finih_distans_z = gameObject.transform.position.z;
+       // finih_distans_x = gameObject.transform.position.x;
+      //  finih_distans_z = gameObject.transform.position.z;
 
-        distans = Mathf.Sqrt(Mathf.Pow((finih_distans_x - start_distans_x), 2) + Mathf.Pow((finih_distans_z - start_distans_z), 2)) ;
-        
+        //distans = Mathf.Sqrt(Mathf.Pow((finih_distans_x - start_distans_x), 2) + Mathf.Pow((finih_distans_z - start_distans_z), 2)) ;
 
-        /*RaycastHit2D hitInfo = Physics2D.Raycast(transform.position, transform.forward, distance, whatIsSolid);
-        Debug.Log(hitInfo);
-        if (hitInfo.collider != null)
-        {
-            Debug.Log(1);
-            if (hitInfo.collider.CompareTag("Bot"))
-            {
-                hitInfo.collider.GetComponent<Run_bot>().Damage(damage);
-            }
-            Destroy(gameObject);
-        }*/
+        //time2 -= Time.fixedDeltaTime;
+        //time -= Time.fixedDeltaTime;
+        //if (time < 0)
+        //{
+        //    Destroy(gameObject);
+        //}
+        //if (time2 <= 0)
+        //{
 
-        
-        transform.Translate(new Vector3(0, 0, 1) * Time.fixedDeltaTime * speed);
-        
-        time2 -= Time.fixedDeltaTime;
-        time -= Time.fixedDeltaTime;
-        if (time < 0)
-        {
-            Destroy(gameObject);
-        }
-        if (time2 <= 0)
-        {
-            
-            time2 = time2_start;
-        }
-        rout_2 = slope + 1 * distans;
+        //    time2 = time2_start;
+        //}
+        //rout_2 = slope + 1 * distans;
 
-        gameObject.transform.rotation = Quaternion.Euler(rout_2, rout, 0);
+        //gameObject.transform.rotation = Quaternion.Euler(rout_2, rout, 0);
+
+        if(collider.enabled)
+            gameObject.transform.LookAt(transform.position + rigidbody.velocity);
     }
-    /*private void OnTriggerEnter(Collider collision)
-    {
-        Run_bot run_bot = collision.GetComponent<Run_bot>();
-        if (run_bot != null)
-        {
+
+    private void OnCollisionEnter(Collision collision) {
+        Run_bot run_bot = collision.gameObject.GetComponent<Run_bot>();
+        if (run_bot != null) {
             run_bot.Damage(damage);
         }
-        Destroy(gameObject);
-    }*/
-    private void OnCollisionEnter(Collision collision)
-    {
 
-        Destroy(gameObject);
+        collider.enabled = false;
+        transform.SetParent(collision.transform);
+        rigidbody.velocity = Vector2.zero;
+        rigidbody.isKinematic = true;
+
+        transform.Translate(Vector3.forward * 0.15f, Space.Self);
     }
-
-
 }

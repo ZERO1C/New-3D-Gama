@@ -282,6 +282,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -395,6 +396,13 @@ MonoBehaviour:
   rout: 0
   point_spawn: {fileID: 5927426789449934477}
   Arrow: {fileID: 1792469155433242601, guid: bb7cb67dca03caa4fa58df462ebd4afb, type: 3}
+  parentCollider:
+  - {fileID: 9183590672545852551}
+  - {fileID: 3913639884325050737}
+  - {fileID: 708071328310212439}
+  - {fileID: 1050423214837610533}
+  - {fileID: 1945621969644824183}
+  - {fileID: 2926823532154363589}
   reload_start: 1
 --- !u!1 &3779669090583676760
 GameObject:
@@ -405,7 +413,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6712170947822478430}
-  - component: {fileID: 932023316663933382}
   m_Layer: 0
   m_Name: 'hand '
   m_TagString: Untagged
@@ -428,56 +435,6 @@ Transform:
   m_Father: {fileID: 7558592686588999877}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 1.8770001, y: -20.797, z: -0.71300006}
---- !u!212 &932023316663933382
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3779669090583676760}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
 --- !u!1 &4685297221540595396
 GameObject:
   m_ObjectHideFlags: 0
@@ -538,6 +495,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -765,7 +723,6 @@ GameObject:
   - component: {fileID: 9183590672545852551}
   - component: {fileID: 6801166699418800021}
   - component: {fileID: 5140011346947257109}
-  - component: {fileID: 7284883136467288912}
   m_Layer: 0
   m_Name: Archer
   m_TagString: Untagged
@@ -839,20 +796,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!136 &7284883136467288912
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5063363609575063368}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 2.5
-  m_Height: 5
-  m_Direction: 1
-  m_Center: {x: 0.5, y: 1.2290654, z: 0}
 --- !u!1 &5814430916869623616
 GameObject:
   m_ObjectHideFlags: 0
@@ -862,7 +805,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2795358226062638341}
-  - component: {fileID: 6671166362186272939}
   m_Layer: 0
   m_Name: hand left
   m_TagString: Untagged
@@ -885,56 +827,6 @@ Transform:
   m_Father: {fileID: 7558592686588999877}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 19.163, y: 43.128002, z: 12.258}
---- !u!212 &6671166362186272939
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5814430916869623616}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
 --- !u!1 &5927426789449934477
 GameObject:
   m_ObjectHideFlags: 0
@@ -1193,6 +1085,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1567,15 +1460,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1f4c6674d0372fa4aa91032bb89697bc, type: 3}
---- !u!4 &2075752707040820189 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 1f4c6674d0372fa4aa91032bb89697bc,
-    type: 3}
-  m_PrefabInstance: {fileID: 6463856066066157767}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &3068596001811974606 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: 1f4c6674d0372fa4aa91032bb89697bc,
+    type: 3}
+  m_PrefabInstance: {fileID: 6463856066066157767}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &2075752707040820189 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 1f4c6674d0372fa4aa91032bb89697bc,
     type: 3}
   m_PrefabInstance: {fileID: 6463856066066157767}
   m_PrefabAsset: {fileID: 0}
